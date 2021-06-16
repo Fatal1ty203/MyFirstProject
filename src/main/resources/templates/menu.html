@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:padding="http://www.w3.org/1999/xhtml"
+      xmlns:margin="http://www.w3.org/1999/xhtml">
+<head>
+    <title> </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"/>
+</head>
+<body>
+<header th:insert="blocks/header.html :: header"> </header>
+
+    <div style="margin:100px 150px 20px 150px; ">
+        <h1> Тут будет меню</h1>
+    </div>
+
+    <div th:each="el : ${fullMenus}" class="alert alert-info mt-2">
+        <H3 th:text="${el.specification}"/>
+        <p th:text="${el.description}"/>
+        <p th:text="${el.kitchen}"/>
+        <p th:text="${el.ordered}"/>
+        <a th:href="'/menu/' + ${el.id}"> Детальнее</a>
+    </div>
+
+</body>
+</html>
